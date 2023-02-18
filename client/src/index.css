@@ -6,4 +6,7 @@
   body {
     @apply font-primary bg-body text-white;
   }
+  .h2 {
+    @apply text-[35px] capitalize;
+  }
 }

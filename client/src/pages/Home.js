@@ -3,9 +3,11 @@ import CategoryNav from '../components/CategoryNav';
 
 const Home = () => {
   return (
-    <div>
-      <CategoryNav />
-    </div>
+    <section>
+      <div className='container mx-auto'>
+        <CategoryNav />
+      </div>
+    </section>
   );
 };
 

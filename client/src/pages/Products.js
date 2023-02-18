@@ -14,14 +14,29 @@ const Products = () => {
       setTitle(data[0].attributes.categories.data[0].attributes.title);
     }
   });
+  console.log(data);
   return (
     <div>
-      <div>
-        <CategoryNav />
+      <div className='container mx-auto'>
+        <div className='flex gap-x-[30px]'>
+          {/* category nav */}
+          <CategoryNav />
+          <main>
+            {/* title */}
+            <div className='py-3 text-xl uppercase'>{title} cameras</div>
+            {/* prodcuts grid */}
+            <div className='grid grid-cols-4 gap-[30px]'>
+              {data?.map((product) => {
+                return (
+                  <div className='h-[362px] bg-black/20'>
+                    {product.attributes.title}
+                  </div>
+                );
+              })}
+            </div>
+          </main>
+        </div>
       </div>
-      <main>
-        <div className='capitalize'>{title} cameras</div>
-      </main>
     </div>
   );
 };
