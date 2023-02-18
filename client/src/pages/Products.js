@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import CategoryNav from '../components/CategoryNav';
 import useFetch from '../hooks/useFetch';
+// components
+import CategoryNav from '../components/CategoryNav';
+import Product from '../components/Product';
 
 const Products = () => {
   const { id } = useParams();
@@ -19,19 +21,19 @@ const Products = () => {
     <div>
       <div className='container mx-auto'>
         <div className='flex gap-x-[30px]'>
+          <div className='hidden xl:flex'>
+            <CategoryNav />
+          </div>
           {/* category nav */}
-          <CategoryNav />
           <main>
             {/* title */}
-            <div className='py-3 text-xl uppercase'>{title} cameras</div>
-            {/* prodcuts grid */}
-            <div className='grid grid-cols-4 gap-[30px]'>
+            <div className='py-3 text-xl uppercase text-center lg:text-left'>
+              {title} cameras
+            </div>
+            {/* products grid */}
+            <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 gap-[15px] md:gap-[30px]'>
               {data?.map((product) => {
-                return (
-                  <div className='h-[362px] bg-black/20'>
-                    {product.attributes.title}
-                  </div>
-                );
+                return <Product product={product} key={product.id} />;
               })}
             </div>
           </main>

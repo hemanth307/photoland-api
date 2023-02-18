@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 const CategoryNav = () => {
   const { data } = useFetch('/categories');
   return (
-    <div className='flex flex-col bg-primary w-full max-w-[286px] rounded-[8px] overflow-hidden'>
+    <div className='flex flex-col bg-primary w-[286px] rounded-[8px] overflow-hidden'>
       <div className='bg-accent h-[50px] text-primary uppercase font-semibold flex items-center justify-center'>
         Browse Categories
       </div>
