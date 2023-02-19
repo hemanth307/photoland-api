@@ -6,7 +6,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
-// import '../swiper.css';
+import '../slider.css';
 
 // import required modules
 import { Pagination } from 'swiper';
@@ -18,19 +18,25 @@ const sliderData = [
   {
     img: CameraImg,
     pretitle: 'Special offer',
-    title: 'Save 20% first service',
+    titlePart1: 'Save 20%',
+    titlePart2: 'On your',
+    titlePart3: 'first order',
     btnText: 'Shop now',
   },
   {
     img: CameraImg,
     pretitle: 'Special offer',
-    title: 'Save 20% first service',
+    titlePart1: 'Save 20%',
+    titlePart2: 'On your',
+    titlePart3: 'first order',
     btnText: 'Shop now',
   },
   {
     img: CameraImg,
     pretitle: 'Special offer',
-    title: 'Save 20% first service',
+    titlePart1: 'Save 20%',
+    titlePart2: 'On your',
+    titlePart3: 'first order',
     btnText: 'Shop now',
   },
 ];
@@ -44,19 +50,31 @@ const MainSlider = () => {
       pagination={{
         clickable: true,
       }}
-      className='h-full bg-mainSlider bg-no-repeat overflow-hidden'
+      className='mainSlider h-full bg-primary xl:bg-mainSlider xl:bg-no-repeat max-w-sm md:max-w-none rounded-[8px] overflow-hidden'
     >
       <>
         {sliderData.map((slide, index) => {
           return (
             <SwiperSlide key={index}>
-              <div className='flex items-start h-full p-[70px]'>
-                {/* image */}
-                <div className='absolute -bottom-16 -right-24'>
-                  <img src={slide.img} alt='' />
+              <div className='flex flex-col lg:flex-row h-full p-[20px] md:p-[60px]'>
+                {/* text */}
+                <div className='w-full lg:flex-1'>
+                  <div className='uppercase mb-1 text-center lg:text-left'>
+                    {slide.pretitle}
+                  </div>
+                  <div className='text-3xl md:text-[46px] font-semibold uppercase leading-none text-center lg:text-left'>
+                    {slide.titlePart1} <br />
+                    {slide.titlePart2} <br />
+                    {slide.titlePart3}
+                  </div>
                 </div>
-                <div className='text-[46px] font-semibold uppercase leading-none'>
-                  Save 20% <br /> First Service
+                {/* image */}
+                <div className='flex-1'>
+                  <img
+                    className='xl:absolute xl:-right-16 xl:-bottom-12'
+                    src={slide.img}
+                    alt=''
+                  />
                 </div>
               </div>
             </SwiperSlide>
