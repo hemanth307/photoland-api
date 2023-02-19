@@ -22,6 +22,9 @@ module.exports = {
         primary: '#151618',
         accent: '#F6CD46',
       },
+      backgroundImage: {
+        banner: "url('img/banner.png')",
+      },
     },
   },
   plugins: [],

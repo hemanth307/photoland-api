@@ -21,9 +21,7 @@ const Products = () => {
     <div>
       <div className='container mx-auto'>
         <div className='flex gap-x-[30px]'>
-          <div className='hidden xl:flex'>
-            <CategoryNav />
-          </div>
+          <CategoryNav />
           {/* category nav */}
           <main>
             {/* title */}
