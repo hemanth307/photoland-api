@@ -12,7 +12,7 @@ const Header = () => {
   return (
     <header className='bg-primary mb-[30px] py-6'>
       <div className='container mx-auto'>
-        <div className='flex flex-col lg:flex-row gap-4 lg:items-center justify-between'>
+        <div className='flex flex-col xl:flex-row gap-4 lg:items-center justify-between'>
           {/* logo */}
           <Link to={'/'}>
             <img src={Logo} alt='' />
@@ -29,7 +29,7 @@ const Header = () => {
             </button>
           </form>
           {/* phone & cart */}
-          <div className='flex items-center gap-x-[30px]'>
+          <div className='flex items-center gap-x-[10px]'>
             <div>Need help? 1234 567 8910</div>
             <div>
               <SlBag className='text-2xl' />
