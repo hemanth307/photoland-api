@@ -22,6 +22,7 @@ const Hero = () => {
           <div className='flex flex-col gap-y-[30px] w-full max-w-sm mx-auto h-[500px]'>
             {/* promo 1 */}
             <div className='grad flex-1 h-[250px] rounded-[8px] overflow-hidden relative p-6'>
+              {/* text */}
               <div className='max-w-[144px] h-full flex flex-col justify-center'>
                 <div className='text-[20px] font-medium leading-tight mb-4'>
                   SAVE 35% ALL DSLR CAMERAS
@@ -38,6 +39,7 @@ const Hero = () => {
             </div>
             {/* promo 2 */}
             <div className='grad flex-1 h-[250px] rounded-[8px] overflow-hidden relative p-6'>
+              {/* text */}
               <div className='max-w-[144px] h-full flex flex-col justify-center'>
                 <div className='text-[20px] font-medium leading-tight mb-4'>
                   SAVE 35% ALL DSLR CAMERAS
@@ -47,7 +49,7 @@ const Hero = () => {
                 </a>
               </div>
               <img
-                className='absolute z-20 top-4 -right-4'
+                className='absolute z-20 top-4 -right-6'
                 src={PromoImg2}
                 alt=''
               />
