@@ -62,11 +62,12 @@ const MainSlider = () => {
                   <div className='uppercase mb-1 text-center lg:text-left'>
                     {slide.pretitle}
                   </div>
-                  <div className='text-3xl md:text-[46px] font-semibold uppercase leading-none text-center lg:text-left'>
+                  <div className='text-3xl md:text-[46px] font-semibold uppercase leading-none text-center lg:text-left mb-24'>
                     {slide.titlePart1} <br />
                     {slide.titlePart2} <br />
                     {slide.titlePart3}
                   </div>
+                  <button className='btn btn-accent'>Shop now</button>
                 </div>
                 {/* image */}
                 <div className='flex-1'>

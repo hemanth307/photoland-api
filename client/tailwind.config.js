@@ -20,7 +20,10 @@ module.exports = {
       colors: {
         body: '#1D1F23',
         primary: '#151618',
-        accent: '#F6CD46',
+        accent: {
+          DEFAULT: '#F6CD46',
+          hover: '#E1B72E',
+        },
       },
       backgroundImage: {
         mainSlider: "url('img/mainSlider_bg.png')",

@@ -18,9 +18,9 @@ const Hero = () => {
           </div>
           <div className='flex flex-col gap-y-[30px] w-full max-w-sm mx-auto'>
             {/* promo 1 */}
-            <div className='bg-primary flex-1 rounded-[8px]'>promo 1</div>
+            <div className='grad flex-1 rounded-[8px]'>promo 1</div>
             {/* promo 2 */}
-            <div className='bg-primary flex-1 rounded-[8px]'>promo 2</div>
+            <div className='grad flex-1 rounded-[8px]'>promo 2</div>
           </div>
         </div>
       </div>
