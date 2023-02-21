@@ -30,8 +30,8 @@ const Product = ({ product }) => {
             {product.attributes.categories.data[0].attributes.title} cameras
           </div>
           {/* title */}
-          <div className='text-[15px] mb-9'>
-            {product.attributes.title.substring(0, 40)}...
+          <div className='text-[15px] mb-4 lg:mb-9'>
+            {product.attributes.title.substring(0, 35)}...
           </div>
           {/* price */}
           <div className='text-lg text-accent'>${product.attributes.price}</div>

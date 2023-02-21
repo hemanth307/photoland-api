@@ -42,7 +42,7 @@ const Hero = () => {
               {/* text */}
               <div className='max-w-[144px] h-full flex flex-col justify-center'>
                 <div className='text-[20px] font-medium leading-tight mb-4'>
-                  SAVE 35% ALL DSLR CAMERAS
+                  SAVE 25% MIRRORLESS CAMERAS
                 </div>
                 <a href='#' className='uppercase text-accent'>
                   Shop now
