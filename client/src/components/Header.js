@@ -27,7 +27,7 @@ const Header = () => {
           <div
             className={`${
               catNavMobile ? 'left-0' : '-left-full'
-            } fixed top-0 bottom-0 z-30 w-full h-screen transition-all duration-300`}
+            } fixed top-0 bottom-0 z-30 w-full h-screen transition-all duration-200`}
           >
             <CategoryNavMobile setCatNavMobile={setCatNavMobile} />
           </div>
@@ -41,7 +41,9 @@ const Header = () => {
           </div>
           {/* phone & cart */}
           <div className='flex items-center gap-x-[10px]'>
-            <div className='hidden xl:flex'>Need help? 1234 567 8910</div>
+            <div className='hidden xl:flex uppercase'>
+              Need help? 123 456 789
+            </div>
             <div className='relative cursor-pointer'>
               <SlBag className='text-2xl' />
               {/* cart amount */}

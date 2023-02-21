@@ -16,7 +16,6 @@ const Products = () => {
       setTitle(data[0].attributes.categories.data[0].attributes.title);
     }
   });
-  console.log(data);
   return (
     <div>
       <div className='container mx-auto'>
