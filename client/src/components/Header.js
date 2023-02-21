@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 // images
 import Logo from '../img/logo.png';
 // icons
@@ -8,15 +8,28 @@ import { FiMenu } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
 // components
 import SearchForm from './SearchForm';
+import CategoryNavMobile from './CategoryNavMobile';
 
 const Header = () => {
+  const [catNavMobile, setCatNavMobile] = useState(false);
   return (
-    <header className='bg-primary lg:mb-[30px] py-6'>
+    <header className='bg-primary xl:mb-[30px] py-6'>
       <div className='container mx-auto'>
         <div className='flex flex-row gap-4 lg:items-center justify-between mb-4 lg:mb-0'>
           {/* menu */}
-          <div className='text-2xl lg:hidden cursor-pointer'>
+          <div
+            onClick={() => setCatNavMobile(true)}
+            className='text-3xl lg:hidden cursor-pointer'
+          >
             <FiMenu />
+          </div>
+          {/* category nav mobile */}
+          <div
+            className={`${
+              catNavMobile ? 'left-0' : '-left-full'
+            } fixed top-0 bottom-0 z-30 w-full h-screen transition-all duration-300`}
+          >
+            <CategoryNavMobile setCatNavMobile={setCatNavMobile} />
           </div>
           {/* logo */}
           <Link to={'/'}>
