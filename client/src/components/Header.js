@@ -15,7 +15,7 @@ const Header = () => {
       <div className='container mx-auto'>
         <div className='flex flex-row gap-4 lg:items-center justify-between mb-4 lg:mb-0'>
           {/* menu */}
-          <div className='text-2xl lg:hidden'>
+          <div className='text-2xl lg:hidden cursor-pointer'>
             <FiMenu />
           </div>
           {/* logo */}
@@ -29,7 +29,7 @@ const Header = () => {
           {/* phone & cart */}
           <div className='flex items-center gap-x-[10px]'>
             <div className='hidden xl:flex'>Need help? 1234 567 8910</div>
-            <div className='relative'>
+            <div className='relative cursor-pointer'>
               <SlBag className='text-2xl' />
               {/* cart amount */}
               <div className='bg-accent text-primary absolute w-4 h-4 rounded-full top-3 -right-1 text-[13px] flex justify-center items-center font-bold'>
