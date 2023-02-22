@@ -41,7 +41,7 @@ const SearchForm = () => {
       <input
         onChange={handleSearchInput}
         type='text'
-        placeholder='Search products...'
+        placeholder='Search for a product...'
         className='h-[50px] rounded-[8px] w-full outline-none px-6 text-primary'
       />
       <button className='btn btn-accent absolute top-0 right-0 rounded-tl-none rounded-bl-none'>
