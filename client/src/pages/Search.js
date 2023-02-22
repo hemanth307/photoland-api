@@ -25,7 +25,9 @@ const Search = () => {
           <main>
             {/* title */}
             <div className='py-3 text-xl uppercase text-center lg:text-left'>
-              {data?.length} results for {searchTerm}
+              {data?.length > 1
+                ? `results for ${searchTerm}`
+                : `no results found for ${searchTerm}`}
             </div>
             {/* products grid */}
             <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 gap-[15px] md:gap-[30px]'>
