@@ -1,5 +1,7 @@
 import React from 'react';
+// useParams hook
 import { useParams } from 'react-router-dom';
+// useFetch hook
 import useFetch from '../hooks/useFetch';
 
 const Product = () => {
