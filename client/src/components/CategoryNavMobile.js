@@ -10,7 +10,7 @@ const CategoryNavMobile = ({ setCatNavMobile }) => {
   return (
     <div className='w-full h-full bg-primary p-8'>
       <div
-        className='flex justify-end mb-8'
+        className='flex justify-end mb-8 cursor-pointer'
         onClick={() => setCatNavMobile(false)}
       >
         <FiX className='text-3xl' />
