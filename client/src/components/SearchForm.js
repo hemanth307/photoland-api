@@ -15,6 +15,7 @@ const SearchForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     navigate(`/search?query=${searchTerm}`);
+    document.querySelector('input').value = '';
   };
 
   return (
