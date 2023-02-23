@@ -16,10 +16,10 @@ const Hero = () => {
             <CategoryNav />
           </div>
           {/* slider */}
-          <div className='w-full max-w-[734px] mx-auto'>
+          <div className='w-full max-w-lg lg:max-w-[734px] mx-auto'>
             <MainSlider />
           </div>
-          <div className='flex flex-col gap-y-[30px] w-full max-w-sm mx-auto h-[500px]'>
+          <div className='flex flex-col gap-y-[30px] w-full max-w-lg mx-auto h-[500px]'>
             {/* promo 1 */}
             <div className='grad flex-1 h-[250px] rounded-[8px] overflow-hidden relative p-6'>
               {/* text */}

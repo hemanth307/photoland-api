@@ -1,13 +1,13 @@
 import React from 'react';
 // components
 import Hero from '../components/Hero';
-import ProductSlider from '../components/ProductSlider';
+import LatestProducts from '../components/LatestProducts';
 
 const Home = () => {
   return (
     <section>
       <Hero />
-      <ProductSlider />
+      <LatestProducts />
     </section>
   );
 };

@@ -50,7 +50,7 @@ const MainSlider = () => {
       pagination={{
         clickable: true,
       }}
-      className='mainSlider h-full bg-primary xl:bg-mainSlider xl:bg-no-repeat max-w-sm lg:max-w-none rounded-[8px] overflow-hidden drop-shadow-2xl'
+      className='mainSlider h-full bg-primary xl:bg-mainSlider xl:bg-no-repeat max-w-lg lg:max-w-none rounded-[8px] overflow-hidden drop-shadow-2xl'
     >
       <>
         {sliderData.map((slide, index) => {
