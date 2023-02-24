@@ -1,8 +1,9 @@
 import React from 'react';
+import { FaYoutube, FaInstagram, FaTwitter, FaFacebook } from 'react-icons/fa';
 
 const Footer = () => {
   return (
-    <footer className='py-24 bg-primary'>
+    <footer className='pt-16 bg-primary'>
       <div className='container mx-auto'>
         <div className='text-center'>
           <h2 className='h2 uppercase mb-6 font-semibold'>
@@ -21,10 +22,40 @@ const Footer = () => {
           />
           <button className='btn btn-accent min-w-[150px]'>Join</button>
         </form>
-        <div className='text-base text-white/60 flex gap-x-6 capitalize max-w-max mx-auto'>
-          <a href='#'>Returns policy</a>
-          <a href='#'>Track your order</a>
-          <a href='#'>Shipping & Delivery</a>
+        {/* links */}
+        <div className='text-base text-white/60 flex gap-x-6 capitalize max-w-max mx-auto mb-9'>
+          <a href='#' className='hover:text-white transition-all'>
+            Returns policy
+          </a>
+          <a href='#' className='hover:text-white transition-all'>
+            Track your order
+          </a>
+          <a href='#' className='hover:text-white transition-all'>
+            Shipping & delivery
+          </a>
+        </div>
+        {/* socials */}
+        <div className='flex gap-x-6 max-w-max mx-auto text-lg mb-16'>
+          <a href='#' className='hover:text-accent transition-all'>
+            <FaYoutube />
+          </a>
+          <a href='#' className='hover:text-accent transition-all'>
+            <FaInstagram />
+          </a>
+          <a href='#' className='hover:text-accent transition-all'>
+            <FaTwitter />
+          </a>
+          <a href='#' className='hover:text-accent transition-all'>
+            <FaFacebook />
+          </a>
+        </div>
+      </div>
+      {/* copyright */}
+      <div className='py-10 border-t border-t-white/10'>
+        <div className='container mx-auto'>
+          <div className='text-center text-sm text-white/60'>
+            Copyright &copy; Photoland 2023. All rights reserved.
+          </div>
         </div>
       </div>
     </footer>
