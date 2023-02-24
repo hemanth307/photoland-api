@@ -17,7 +17,7 @@ const Products = () => {
     }
   });
   return (
-    <div className='mb-16'>
+    <div className='mb-16 pt-40 lg:pt-0'>
       <div className='container mx-auto'>
         <div className='flex gap-x-[30px]'>
           <CategoryNav />

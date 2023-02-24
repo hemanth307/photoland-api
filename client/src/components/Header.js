@@ -13,7 +13,7 @@ import CategoryNavMobile from './CategoryNavMobile';
 const Header = () => {
   const [catNavMobile, setCatNavMobile] = useState(false);
   return (
-    <header className='bg-primary xl:mb-[30px] py-6'>
+    <header className='bg-primary py-6 fixed w-full top-0 z-40 lg:relative xl:mb-[30px]'>
       <div className='container mx-auto'>
         <div className='flex flex-row gap-4 lg:items-center justify-between mb-4 lg:mb-0'>
           {/* menu */}
