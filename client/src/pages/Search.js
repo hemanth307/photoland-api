@@ -17,7 +17,7 @@ const Search = () => {
   console.log(data);
 
   return (
-    <div>
+    <div className='mb-[30px]'>
       <div className='container mx-auto'>
         <div className='flex gap-x-[30px]'>
           <CategoryNav />
