@@ -19,7 +19,7 @@ const Header = () => {
           {/* menu */}
           <div
             onClick={() => setCatNavMobile(true)}
-            className='text-3xl lg:hidden cursor-pointer'
+            className='text-3xl xl:hidden cursor-pointer'
           >
             <FiMenu />
           </div>
@@ -36,7 +36,7 @@ const Header = () => {
             <img src={Logo} alt='' />
           </Link>
           {/* searchform - show on desktop */}
-          <div className='hidden lg:flex w-full lg:max-w-[640px] xl:max-w-[734px]'>
+          <div className='hidden w-full xl:flex xl:max-w-[734px]'>
             <SearchForm />
           </div>
           {/* phone & cart */}
