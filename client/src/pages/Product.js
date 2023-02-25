@@ -5,6 +5,8 @@ import { useParams } from 'react-router-dom';
 import useFetch from '../hooks/useFetch';
 // icons
 import { FiPlus, FiMinus } from 'react-icons/fi';
+// components
+import RelatedProducts from '../components/RelatedProducts';
 
 const Product = () => {
   const { id } = useParams();
@@ -13,12 +15,13 @@ const Product = () => {
   if (!data) {
     return <div className='container mx-auto'>loading...</div>;
   }
+  const categoryTitle = data[0].attributes.categories.data[0].attributes.title;
 
   return (
     <div className='mb-16 pt-44 lg:pt-[30px] xl:pt-0'>
       <div className='container mx-auto'>
-        <div className='flex flex-col lg:flex-row gap-[30px]'>
-          <div className='flex-1 lg:max-w-[40%] grad rounded-lg flex justify-center items-center'>
+        <div className='flex flex-col lg:flex-row gap-[30px] mb-[30px]'>
+          <div className='flex-1 lg:max-w-[40%] lg:h-[540px] grad rounded-lg flex justify-center items-center'>
             <img
               src={`http://localhost:1337${data[0].attributes.image.data.attributes.url}`}
               alt=''
@@ -54,6 +57,8 @@ const Product = () => {
             </div>
           </div>
         </div>
+        {/* related products */}
+        <RelatedProducts categoryTitle={categoryTitle} />
       </div>
     </div>
   );

@@ -1,20 +1,15 @@
 import React from 'react';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
-
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/pagination';
 // import required modules
 import { Pagination, Navigation } from 'swiper';
-
-// useFetch hook
-import useFetch from '../hooks/useFetch';
 // components
 import Product from '../components/Product';
 
-const ProductSlider = () => {
-  const { data } = useFetch('/products?populate=*&filters[isNew]=true');
+const ProductSlider = ({ data }) => {
   return (
     <Swiper
       modules={[Pagination, Navigation]}

@@ -14,7 +14,6 @@ const Search = () => {
   const { data } = useFetch(
     `/products?populate=*&filters[title][$contains]=${searchTerm}`
   );
-  console.log(data);
 
   return (
     <div className='mb-[30px] pt-40 lg:pt-0'>
@@ -22,7 +21,7 @@ const Search = () => {
         <div className='flex gap-x-[30px]'>
           <CategoryNav />
           {/* category nav */}
-          <main>
+          <div>
             {/* title */}
             <div className='py-3 text-xl uppercase text-center lg:text-left'>
               {data?.length > 0
@@ -35,7 +34,7 @@ const Search = () => {
                 return <Product product={product} key={product.id} />;
               })}
             </div>
-          </main>
+          </div>
         </div>
       </div>
     </div>
