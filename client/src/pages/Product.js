@@ -58,7 +58,7 @@ const Product = () => {
                 </button>
               </div>
               <button
-                onClick={() => addToCart(data)}
+                onClick={() => addToCart(data, id)}
                 className='btn btn-accent'
               >
                 Add to cart

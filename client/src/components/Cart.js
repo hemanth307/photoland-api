@@ -15,9 +15,20 @@ const Cart = () => {
         <IoClose />
       </div>
       <div>
-        {/* {cart.map((item) => {
-          return <div key={item.id}>product</div>;
-        })} */}
+        {cart.map((item) => {
+          console.log(item);
+          return (
+            <div key={item.id}>
+              <div className='w-24 h-24'>
+                <img
+                  src={`http://localhost:1337${item.attributes.image.data.attributes.url}`}
+                  alt=''
+                />
+              </div>
+              <div>{item.attributes.title}</div>
+            </div>
+          );
+        })}
       </div>
     </div>
   );
