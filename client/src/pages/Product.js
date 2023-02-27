@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 // useParams hook
 import { useParams } from 'react-router-dom';
 // useFetch hook
@@ -7,8 +7,12 @@ import useFetch from '../hooks/useFetch';
 import { FiPlus, FiMinus } from 'react-icons/fi';
 // components
 import RelatedProducts from '../components/RelatedProducts';
+// context
+import { CartContext } from '../context/CartContext';
 
 const Product = () => {
+  const { addToCart } = useContext(CartContext);
+
   const { id } = useParams();
   const { data } = useFetch(`/products?populate=*&filters[id][$eq]=${id}`);
 
@@ -53,7 +57,12 @@ const Product = () => {
                   <FiPlus />
                 </button>
               </div>
-              <button className='btn btn-accent'>Add to cart</button>
+              <button
+                onClick={() => addToCart(data)}
+                className='btn btn-accent'
+              >
+                Add to cart
+              </button>
             </div>
           </div>
         </div>

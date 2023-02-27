@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 // images
 import Logo from '../img/logo.png';
 // icons
@@ -9,9 +9,13 @@ import { Link } from 'react-router-dom';
 // components
 import SearchForm from './SearchForm';
 import CategoryNavMobile from './CategoryNavMobile';
+import Cart from './Cart';
+// context
+import { CartContext } from '../context/CartContext';
 
 const Header = () => {
   const [catNavMobile, setCatNavMobile] = useState(false);
+  const { isOpen, setIsOpen } = useContext(CartContext);
   return (
     <header className='bg-primary py-6 fixed w-full top-0 z-40 lg:relative xl:mb-[30px]'>
       <div className='container mx-auto'>
@@ -44,12 +48,23 @@ const Header = () => {
             <div className='hidden xl:flex uppercase'>
               Need help? 123 456 789
             </div>
-            <div className='relative cursor-pointer'>
+            <div
+              onClick={() => setIsOpen(!isOpen)}
+              className='relative cursor-pointer'
+            >
               <SlBag className='text-2xl' />
               {/* cart amount */}
               <div className='bg-accent text-primary absolute w-4 h-4 rounded-full top-3 -right-1 text-[13px] flex justify-center items-center font-bold'>
                 3
               </div>
+            </div>
+            {/* cart */}
+            <div
+              className={`${
+                isOpen ? 'right-0' : '-right-full'
+              } bg-white fixed top-0 bottom-0 w-full max-w-sm z-10 transition-all duration-300`}
+            >
+              <Cart />
             </div>
           </div>
         </div>
