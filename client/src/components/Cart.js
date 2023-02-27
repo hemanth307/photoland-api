@@ -7,19 +7,19 @@ import { CartContext } from '../context/CartContext';
 const Cart = () => {
   const { cart, setIsOpen } = useContext(CartContext);
   return (
-    <div className='w-full h-full text-primary'>
+    <div className='w-full h-full px-4 text-white'>
       <div
         onClick={() => setIsOpen(false)}
-        className='text-4xl h-[98px] flex justify-start items-center pl-4 cursor-pointer'
+        className='text-4xl w-20 h-[98px] flex justify-start items-center cursor-pointer'
       >
         <IoClose />
       </div>
-      <div>
+      <div className=''>
         {cart.map((item) => {
           console.log(item);
           return (
             <div key={item.id}>
-              <div className='w-24 h-24'>
+              <div className='w-20 h-20'>
                 <img
                   src={`http://localhost:1337${item.attributes.image.data.attributes.url}`}
                   alt=''
