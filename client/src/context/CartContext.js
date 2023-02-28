@@ -47,8 +47,16 @@ const CartProvider = ({ children }) => {
   };
 
   // increase amount
-  const increaseAmount = () => {
-    console.log('amount increased');
+  const increaseAmount = (item, id) => {
+    const itemId = parseInt(id);
+    const foundItem = cart.find((item) => {
+      return item.id === itemId;
+    });
+    if (foundItem) {
+      addToCart(foundItem, itemId);
+    } else {
+      addToCart(item, itemId);
+    }
   };
 
   return (

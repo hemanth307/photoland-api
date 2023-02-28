@@ -11,7 +11,7 @@ import RelatedProducts from '../components/RelatedProducts';
 import { CartContext } from '../context/CartContext';
 
 const Product = () => {
-  const { addToCart } = useContext(CartContext);
+  const { addToCart, increaseAmount } = useContext(CartContext);
 
   const { id } = useParams();
   const { data } = useFetch(`/products?populate=*&filters[id][$eq]=${id}`);
@@ -53,7 +53,10 @@ const Product = () => {
                   1
                 </div>
                 {/* plus */}
-                <button className='w-full h-full flex justify-center items-center border-l text-sm'>
+                <button
+                  onClick={() => increaseAmount(data, id)}
+                  className='w-full h-full flex justify-center items-center border-l text-sm'
+                >
                   <FiPlus />
                 </button>
               </div>
