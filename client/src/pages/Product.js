@@ -49,7 +49,7 @@ const Product = () => {
                   <FiMinus />
                 </button>
                 {/* amount */}
-                <div className='w-36 flex justify-center items-center text-lg'>
+                <div className='w-36 flex justify-center items-center text-sm text-primary font-semibold'>
                   1
                 </div>
                 {/* plus */}
