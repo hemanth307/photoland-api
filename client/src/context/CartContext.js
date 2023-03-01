@@ -1,18 +1,21 @@
 import React, { createContext, useEffect, useState } from 'react';
 
+// context
 export const CartContext = createContext();
 
 const CartProvider = ({ children }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [cart, setCart] = useState([]);
-  const [itemAmount, setItemAmount] = useState(0);
+  const [itemsAmount, setItemsAmount] = useState(0);
+
+  const [amount, setAmount] = useState(1);
 
   // update cart amount
   useEffect(() => {
     const amount = cart.reduce((a, c) => {
       return a + c.amount;
     }, 0);
-    setItemAmount(amount);
+    setItemsAmount(amount);
   }, [cart]);
 
   // add to cart
@@ -27,6 +30,7 @@ const CartProvider = ({ children }) => {
     if (cartItem) {
       const newCart = [...cart].map((item) => {
         if (item.id === itemID) {
+          setAmount(cartItem.amount + 1);
           return { ...item, amount: cartItem.amount + 1 };
         } else {
           return item;
@@ -36,7 +40,10 @@ const CartProvider = ({ children }) => {
     } else {
       setCart([...cart, newItem]);
     }
+    setIsOpen(true);
   };
+  console.log(cart);
+  console.log(amount);
 
   // remove from cart
   const removeFromCart = (id) => {
@@ -47,28 +54,24 @@ const CartProvider = ({ children }) => {
   };
 
   // increase amount
-  const increaseAmount = (item, id) => {
-    const itemId = parseInt(id);
-    const foundItem = cart.find((item) => {
-      return item.id === itemId;
-    });
-    if (foundItem) {
-      addToCart(foundItem, itemId);
-    } else {
-      addToCart(item, itemId);
-    }
+  const handleSelect = (e, id) => {
+    const value = parseInt(e.target.value);
+    console.log(`item id is ${id}`);
+    // setSelectedAmount(parseInt(e.target.value));
+    console.log(`item amount is ${value}`);
+    // find the item with the the id and change item amount with the new value then render new cart
   };
 
   return (
     <CartContext.Provider
       value={{
+        cart,
         isOpen,
         setIsOpen,
-        cart,
+        itemsAmount,
         addToCart,
         removeFromCart,
-        itemAmount,
-        increaseAmount,
+        handleSelect,
       }}
     >
       {children}

@@ -3,16 +3,13 @@ import React, { useContext } from 'react';
 import { useParams } from 'react-router-dom';
 // useFetch hook
 import useFetch from '../hooks/useFetch';
-// icons
-import { FiPlus, FiMinus } from 'react-icons/fi';
 // components
 import RelatedProducts from '../components/RelatedProducts';
 // context
 import { CartContext } from '../context/CartContext';
 
-const Product = () => {
-  const { addToCart, increaseAmount } = useContext(CartContext);
-
+const ProductDetails = () => {
+  const { addToCart } = useContext(CartContext);
   const { id } = useParams();
   const { data } = useFetch(`/products?populate=*&filters[id][$eq]=${id}`);
 
@@ -41,32 +38,12 @@ const Product = () => {
             <div className='text-3xl text-accent font-semibold mb-6'>
               ${data[0].attributes.price}
             </div>
-            {/* quantity & btn */}
-            <div className='flex gap-x-4'>
-              <div className='bg-white w-full max-w-[140px] h-[50px] rounded-lg text-primary flex justify-between items-center overflow-hidden'>
-                {/* minus */}
-                <button className='w-full h-full flex justify-center items-center border-r text-sm'>
-                  <FiMinus />
-                </button>
-                {/* amount */}
-                <div className='w-36 flex justify-center items-center text-sm text-primary font-semibold'>
-                  1
-                </div>
-                {/* plus */}
-                <button
-                  onClick={() => increaseAmount(data, id)}
-                  className='w-full h-full flex justify-center items-center border-l text-sm'
-                >
-                  <FiPlus />
-                </button>
-              </div>
-              <button
-                onClick={() => addToCart(data, id)}
-                className='btn btn-accent'
-              >
-                Add to cart
-              </button>
-            </div>
+            <button
+              onClick={() => addToCart(data, id)}
+              className='btn btn-accent'
+            >
+              Add to cart
+            </button>
           </div>
         </div>
         {/* related products */}
@@ -76,4 +53,4 @@ const Product = () => {
   );
 };
 
-export default Product;
+export default ProductDetails;

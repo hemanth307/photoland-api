@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
+// useParams hook
 import { useParams } from 'react-router-dom';
+// useFetch hook
 import useFetch from '../hooks/useFetch';
 // components
 import CategoryNav from '../components/CategoryNav';
@@ -7,7 +9,7 @@ import Product from '../components/Product';
 
 const Products = () => {
   const { id } = useParams();
-  const { data, loading, error } = useFetch(
+  const { data } = useFetch(
     `/products?populate=*&filters[categories][id][$eq]=${id}`
   );
   const [title, setTitle] = useState(null);

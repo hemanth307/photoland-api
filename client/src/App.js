@@ -5,7 +5,7 @@ import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom';
 // pages
 import Home from './pages/Home';
 import Products from './pages/Products';
-import Product from './pages/Product';
+import ProductDetails from './pages/ProductDetails';
 import Search from './pages/Search';
 
 // components
@@ -29,7 +29,7 @@ const router = createBrowserRouter([
     children: [
       { path: '/', element: <Home /> },
       { path: '/products/:id', element: <Products /> },
-      { path: '/product/:id', element: <Product /> },
+      { path: '/product/:id', element: <ProductDetails /> },
       { path: '/search', element: <Search /> },
     ],
   },
