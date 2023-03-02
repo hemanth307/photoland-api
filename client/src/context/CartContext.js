@@ -8,7 +8,6 @@ const CartProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
   const [itemsAmount, setItemsAmount] = useState(0);
   const [amount, setAmount] = useState(0);
-  const [input, setInput] = useState(false);
 
   // update cart amount
   useEffect(() => {
@@ -32,10 +31,6 @@ const CartProvider = ({ children }) => {
       const newCart = [...cart].map((item) => {
         if (item.id === itemID) {
           setAmount(cartItem.amount + 1);
-          if (cartItem.amount >= 9) {
-            setInput(true);
-          }
-
           return { ...item, amount: cartItem.amount + 1 };
         } else {
           return item;
@@ -49,45 +44,60 @@ const CartProvider = ({ children }) => {
   };
 
   // handleChange
-  // const handleChange = (e, id) => {
-  //   const value = parseInt(e.target.value);
-  //   const cartItem = cart.find((item) => {
-  //     return item.id === id;
-  //   });
+  const handleInput = (e, id) => {
+    const value = parseInt(e.target.value);
+    const cartItem = cart.find((item) => {
+      return item.id === id;
+    });
 
-  //   if (cartItem) {
-  //     const newCart = [...cart].map((item) => {
-  //       if (item.id === id) {
-  //         setAmount(value);
-  //         if (value > 9) {
-  //           setInput(true);
-  //         }
-  //         return { ...item, amount: value };
-  //       } else {
-  //         return item;
-  //       }
-  //     });
+    if (cartItem) {
+      const newCart = [...cart].map((item) => {
+        if (item.id === id) {
+          setAmount(value);
+          return { ...item, amount: value };
+        } else {
+          return item;
+        }
+      });
 
-  //     setCart(newCart);
-  //   }
-  // };
+      setCart(newCart);
+    }
+  };
+
+  // handleChange
+  const handleSelect = (e, id) => {
+    const value = parseInt(e.target.value);
+    const cartItem = cart.find((item) => {
+      return item.id === id;
+    });
+
+    if (cartItem) {
+      const newCart = [...cart].map((item) => {
+        if (item.id === id) {
+          setAmount(value);
+          return { ...item, amount: value };
+        } else {
+          return item;
+        }
+      });
+
+      setCart(newCart);
+    }
+  };
 
   // handleBlur
-  // const handleBlur = (e, id) => {
-  //   const value = parseInt(e.target.value);
-  //   // const cartItem = cart.find((item) => {
-  //   //   return item.id === id;
-  //   // });
-  //   // console.log(cartItem);
-  // };
+  const handleBlur = (e, id) => {
+    const value = parseInt(e.target.value);
+    console.log(value);
+  };
 
   // remove from cart
-  // const removeFromCart = (id) => {
-  //   const newCart = cart.filter((item) => {
-  //     return item.id !== id;
-  //   });
-  //   setCart(newCart);
-  // };
+  const removeFromCart = (id) => {
+    const newCart = cart.filter((item) => {
+      return item.id !== id;
+    });
+    setCart(newCart);
+  };
 
   return (
     <CartContext.Provider
@@ -98,11 +108,10 @@ const CartProvider = ({ children }) => {
         itemsAmount,
         amount,
         addToCart,
-        // removeFromCart,
-        // handleChange,
-        // handleBlur,
-        input,
-        setInput,
+        removeFromCart,
+        handleInput,
+        handleSelect,
+        handleBlur,
       }}
     >
       {children}

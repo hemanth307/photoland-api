@@ -3,14 +3,14 @@ import React, { useContext } from 'react';
 import { CartContext } from '../context/CartContext';
 
 const Qty = ({ item }) => {
-  const { handleChange, handleBlur } = useContext(CartContext);
+  const { handleInput, handleSelect, handleBlur } = useContext(CartContext);
 
   return (
     <div className='flex gap-x-3 text-primary'>
       {item.amount < 10 ? (
         <select
           value={item.amount}
-          onChange={(e) => handleChange(e, item.id)}
+          onChange={(e) => handleSelect(e, item.id)}
           className='p-2 rounded-lg w-[100px] outline-none text-primary'
         >
           {/* <option value='0'>0 - delete</option> */}
@@ -28,7 +28,7 @@ const Qty = ({ item }) => {
       ) : (
         <input
           value={item.amount}
-          onChange={(e) => handleChange(e, item.id)}
+          onChange={(e) => handleInput(e, item.id)}
           onBlur={(e) => handleBlur(e, item.id)}
           className='text-primary'
         />
