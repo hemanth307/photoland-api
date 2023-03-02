@@ -8,7 +8,7 @@ const CartProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
   const [itemsAmount, setItemsAmount] = useState(0);
 
-  const [amount, setAmount] = useState(1);
+  const [amount, setAmount] = useState(0);
 
   // update cart amount
   useEffect(() => {
@@ -53,13 +53,10 @@ const CartProvider = ({ children }) => {
     setCart(newCart);
   };
 
-  // increase amount
+  // select amount
   const handleSelect = (e, id) => {
     const value = parseInt(e.target.value);
-    console.log(`item id is ${id}`);
-    // setSelectedAmount(parseInt(e.target.value));
-    console.log(`item amount is ${value}`);
-    // find the item with the the id and change item amount with the new value then render new cart
+
     const cartItem = cart.find((item) => {
       return item.id === id;
     });

@@ -39,7 +39,7 @@ const ProductDetails = () => {
               ${data[0].attributes.price}
             </div>
             <button
-              onClick={() => addToCart(data, id)}
+              onClick={(e) => addToCart(data, id)}
               className='btn btn-accent'
             >
               Add to cart
