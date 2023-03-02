@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 // icons
 import { IoTrashOutline } from 'react-icons/io5';
 // components
-import QtySelect from './QtySelect';
+import Qty from './Qty';
+// context
+import { CartContext } from '../context/CartContext';
 
 const CartItem = ({ item }) => {
+  const { removeFromCart } = useContext(CartContext);
   return (
     <div className='flex gap-x-4'>
       <div className='w-[70px] h-[70px]'>
@@ -17,13 +20,16 @@ const CartItem = ({ item }) => {
         {/* title & delete icon */}
         <div className='flex gap-x-4 mb-3'>
           <div className='text-sm'>{item.attributes.title}</div>
-          <div className='cursor-pointer'>
+          <div
+            onClick={() => removeFromCart(item.id)}
+            className='cursor-pointer'
+          >
             <IoTrashOutline />
           </div>
         </div>
         {/* quantity  */}
         <div className='flex gap-x-4'>
-          <QtySelect item={item} />
+          <Qty item={item} />
         </div>
       </div>
     </div>
