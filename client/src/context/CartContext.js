@@ -60,6 +60,21 @@ const CartProvider = ({ children }) => {
     // setSelectedAmount(parseInt(e.target.value));
     console.log(`item amount is ${value}`);
     // find the item with the the id and change item amount with the new value then render new cart
+    const cartItem = cart.find((item) => {
+      return item.id === id;
+    });
+
+    if (cartItem) {
+      const newCart = [...cart].map((item) => {
+        if (item.id === id) {
+          setAmount(value);
+          return { ...item, amount: value };
+        } else {
+          return item;
+        }
+      });
+      setCart(newCart);
+    }
   };
 
   return (
@@ -72,6 +87,7 @@ const CartProvider = ({ children }) => {
         addToCart,
         removeFromCart,
         handleSelect,
+        amount,
       }}
     >
       {children}

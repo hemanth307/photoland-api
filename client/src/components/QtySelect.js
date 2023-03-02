@@ -4,9 +4,9 @@ import { CartContext } from '../context/CartContext';
 
 const QtySelect = ({ item }) => {
   const { handleSelect } = useContext(CartContext);
-  console.log(item);
   return (
     <select
+      defaultValue={item.amount}
       onChange={(e) => handleSelect(e, item.id)}
       className='p-2 rounded-lg w-[100px] outline-none text-primary'
     >
