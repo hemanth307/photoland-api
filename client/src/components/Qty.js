@@ -1,10 +1,10 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 // context
 import { CartContext } from '../context/CartContext';
 
 const Qty = ({ item }) => {
-  const { handleInput, handleSelect, handleBlur } = useContext(CartContext);
-  const [inputVal, setInputVal] = useState(1);
+  const { handleInput, handleSelect } = useContext(CartContext);
+
   return (
     <div className='flex gap-x-3 text-primary'>
       {item.amount < 10 ? (
