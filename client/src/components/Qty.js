@@ -1,10 +1,10 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 // context
 import { CartContext } from '../context/CartContext';
 
 const Qty = ({ item }) => {
   const { handleInput, handleSelect, handleBlur } = useContext(CartContext);
-
+  const [inputVal, setInputVal] = useState(1);
   return (
     <div className='flex gap-x-3 text-primary'>
       {item.amount < 10 ? (
@@ -27,9 +27,7 @@ const Qty = ({ item }) => {
         </select>
       ) : (
         <input
-          value={item.amount}
-          onChange={(e) => handleInput(e, item.id)}
-          onBlur={(e) => handleBlur(e, item.id)}
+          onBlur={(e) => handleInput(e, item.id)}
           className='text-primary'
         />
       )}

@@ -28,7 +28,7 @@ const CartProvider = ({ children }) => {
 
     // if cart item is already in the cart
     if (cartItem) {
-      const newCart = [...cart].map((item) => {
+      const newCart = cart.map((item) => {
         if (item.id === itemID) {
           setAmount(cartItem.amount + 1);
           return { ...item, amount: cartItem.amount + 1 };
@@ -43,28 +43,7 @@ const CartProvider = ({ children }) => {
     setIsOpen(true);
   };
 
-  // handleChange
-  const handleInput = (e, id) => {
-    const value = parseInt(e.target.value);
-    const cartItem = cart.find((item) => {
-      return item.id === id;
-    });
-
-    if (cartItem) {
-      const newCart = [...cart].map((item) => {
-        if (item.id === id) {
-          setAmount(value);
-          return { ...item, amount: value };
-        } else {
-          return item;
-        }
-      });
-
-      setCart(newCart);
-    }
-  };
-
-  // handleChange
+  // handleSelect
   const handleSelect = (e, id) => {
     const value = parseInt(e.target.value);
     const cartItem = cart.find((item) => {
@@ -85,11 +64,33 @@ const CartProvider = ({ children }) => {
     }
   };
 
-  // handleBlur
-  const handleBlur = (e, id) => {
+  // handleInput
+  const handleInput = (e, id) => {
     const value = parseInt(e.target.value);
-    console.log(value);
+    // find the item in the cart by id
+    const cartItem = cart.find((item) => {
+      return item.id === id;
+    });
+    // if cart item
+    if (cartItem) {
+      const newCart = cart.map((item) => {
+        if (item.id === id) {
+          setAmount(value);
+          return { ...item, amount: value };
+        } else {
+          return item;
+        }
+      });
+      setCart(newCart);
+    }
+    setIsOpen(true);
   };
+
+  // handleBlur
+  // const handleBlur = (e, id) => {
+  //   const value = parseInt(e.target.value);
+  //   console.log(value);
+  // };
 
   // remove from cart
   const removeFromCart = (id) => {
@@ -109,9 +110,9 @@ const CartProvider = ({ children }) => {
         amount,
         addToCart,
         removeFromCart,
-        handleInput,
         handleSelect,
-        handleBlur,
+        handleInput,
+        // handleBlur,
       }}
     >
       {children}
