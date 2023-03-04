@@ -29,7 +29,7 @@ const Qty = ({ item }) => {
           // value={item.amount}
           // onChange={(e) => handleInput(e, item.id)}
           onBlur={(e) => handleInput(e, item.id)}
-          placeholder='Enter amount'
+          placeholder={`Enter amount`}
           className='text-primary'
         />
       )}
