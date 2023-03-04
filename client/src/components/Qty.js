@@ -13,7 +13,6 @@ const Qty = ({ item }) => {
           onChange={(e) => handleSelect(e, item.id)}
           className='p-2 rounded-lg w-[100px] outline-none text-primary'
         >
-          {/* <option value='0'>0 - delete</option> */}
           <option value='1'>1</option>
           <option value='2'>2</option>
           <option value='3'>3</option>
@@ -27,7 +26,10 @@ const Qty = ({ item }) => {
         </select>
       ) : (
         <input
+          // value={item.amount}
+          // onChange={(e) => handleInput(e, item.id)}
           onBlur={(e) => handleInput(e, item.id)}
+          placeholder='Enter amount'
           className='text-primary'
         />
       )}

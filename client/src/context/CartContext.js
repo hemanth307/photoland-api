@@ -75,8 +75,13 @@ const CartProvider = ({ children }) => {
     if (cartItem) {
       const newCart = cart.map((item) => {
         if (item.id === id) {
-          setAmount(value);
-          return { ...item, amount: value };
+          if (isNaN(value)) {
+            setAmount(1);
+            return { ...item, amount: 1 };
+          } else {
+            setAmount(value);
+            return { ...item, amount: value };
+          }
         } else {
           return item;
         }
@@ -85,12 +90,6 @@ const CartProvider = ({ children }) => {
     }
     setIsOpen(true);
   };
-
-  // handleBlur
-  // const handleBlur = (e, id) => {
-  //   const value = parseInt(e.target.value);
-  //   console.log(value);
-  // };
 
   // remove from cart
   const removeFromCart = (id) => {
@@ -108,12 +107,10 @@ const CartProvider = ({ children }) => {
         setIsOpen,
         itemsAmount,
         amount,
-        setAmount,
         addToCart,
-        removeFromCart,
         handleSelect,
         handleInput,
-        // handleBlur,
+        removeFromCart,
       }}
     >
       {children}
