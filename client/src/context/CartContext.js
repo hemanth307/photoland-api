@@ -17,6 +17,8 @@ const CartProvider = ({ children }) => {
     setItemsAmount(amount);
   }, [cart]);
 
+  useEffect(() => {});
+
   // add to cart
   const addToCart = (item, id) => {
     const itemID = parseInt(id);
@@ -99,6 +101,10 @@ const CartProvider = ({ children }) => {
     setCart(newCart);
   };
 
+  const clearCart = () => {
+    setCart([]);
+  };
+
   return (
     <CartContext.Provider
       value={{
@@ -111,6 +117,7 @@ const CartProvider = ({ children }) => {
         handleSelect,
         handleInput,
         removeFromCart,
+        clearCart,
       }}
     >
       {children}

@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 // icons
-import { IoTrashOutline } from 'react-icons/io5';
+import { IoTrashOutline, IoClose } from 'react-icons/io5';
 // components
 import Qty from './Qty';
 // context
@@ -22,9 +22,9 @@ const CartItem = ({ item }) => {
           <div className='text-sm'>{item.attributes.title}</div>
           <div
             onClick={() => removeFromCart(item.id)}
-            className='cursor-pointer'
+            className='cursor-pointer text-[24px] text-accent hover:text-red-600 transition-all'
           >
-            <IoTrashOutline />
+            <IoClose />
           </div>
         </div>
         {/* quantity  */}
