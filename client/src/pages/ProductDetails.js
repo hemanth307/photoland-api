@@ -34,16 +34,18 @@ const ProductDetails = () => {
               {data[0].attributes.categories.data[0].attributes.title} cameras
             </div>
             <h2 className='h2 mb-4'>{data[0].attributes.title}</h2>
-            <p className='mb-4'>{data[0].attributes.description}</p>
-            <div className='text-3xl text-accent font-semibold mb-6'>
-              ${data[0].attributes.price}
+            <p className='mb-12'>{data[0].attributes.description}</p>
+            <div className='flex items-center gap-x-8'>
+              <div className='text-3xl text-accent font-semibold'>
+                ${data[0].attributes.price}
+              </div>
+              <button
+                onClick={(e) => addToCart(data, id)}
+                className='btn btn-accent'
+              >
+                Add to cart
+              </button>
             </div>
-            <button
-              onClick={(e) => addToCart(data, id)}
-              className='btn btn-accent'
-            >
-              Add to cart
-            </button>
           </div>
         </div>
         {/* related products */}

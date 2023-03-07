@@ -33,9 +33,6 @@ const Qty = ({ item }) => {
           className='text-primary placeholder:text-primary h-12 rounded-md p-4 w-[120px] outline-accent'
         />
       )}
-      <div className='text-accent text-[24px]'>
-        ${item.attributes.price * item.amount}
-      </div>
     </div>
   );
 };
