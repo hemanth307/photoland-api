@@ -4,7 +4,7 @@ import CartItem from './CartItem';
 // context
 import { CartContext } from '../context/CartContext';
 // icons
-import { IoClose, IoBasket } from 'react-icons/io5';
+import { IoClose, IoArrowForward, IoCartOutline } from 'react-icons/io5';
 
 const Cart = () => {
   const { cart, setIsOpen, clearCart, total } = useContext(CartContext);
@@ -23,34 +23,43 @@ const Cart = () => {
           })}
         </div>
       </div>
+
       {/* subtotal and total */}
-      <div className='px-6 py-10 flex flex-col'>
-        <div className='flex justify-between text-xl mb-2'>
-          <div>Subtotal</div>
-          <div className='text-white'>$ {parseFloat(total)}</div>
+      {cart.length >= 1 && (
+        <div className='px-6 py-10 flex flex-col'>
+          <div className='flex justify-between text-lg'>
+            <div>Subtotal</div>
+            <div className='text-white'>$ {parseFloat(total)}</div>
+          </div>
+          <div className='flex justify-between text-2xl'>
+            <div>Total</div>
+            <div className='text-white'>$ {total}</div>
+          </div>
         </div>
-        <div className='flex justify-between text-2xl mb-6'>
-          <div>Total</div>
-          <div className='text-white'>$ {total}</div>
-        </div>
-        {/* clear cart button */}
-        <div>
-          {cart.length >= 1 ? (
+      )}
+
+      <div className='px-6'>
+        {cart.length >= 1 ? (
+          <div className='flex justify-between gap-x-4'>
             <button
               onClick={() => clearCart()}
               className='btn bg-accent hover:bg-accent-hover text-primary'
             >
               clear cart
             </button>
-          ) : (
-            <div className='h-full absolute top-0 right-0 left-0 flex justify-center items-center -z-10 flex-col text-white/30'>
-              <div className='text-2xl'>Your cart is empty</div>
-              <div className='text-6xl'>
-                <IoBasket />
-              </div>
+            <button className='flex-1 btn bg-accent hover:bg-accent-hover text-primary px-2 gap-x-2'>
+              Checkout
+              <IoArrowForward className='text-lg' />
+            </button>
+          </div>
+        ) : (
+          <div className='h-full absolute top-0 right-0 left-0 flex justify-center items-center -z-10 flex-col text-white/30'>
+            <div className='text-2xl'>Your cart is empty</div>
+            <div className='text-6xl'>
+              <IoCartOutline />
             </div>
-          )}
-        </div>
+          </div>
+        )}
       </div>
     </div>
   );
