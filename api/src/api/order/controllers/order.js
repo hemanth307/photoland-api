@@ -19,11 +19,9 @@ module.exports = createCoreController("api::order.order", ({ strapi }) => ({
     // console.log(cart);
     const lineItems = await Promise.all(
       cart.map(async (product) => {
-        console.log(product.amount);
         const item = await strapi
           .service("api::product.product")
           .findOne(product.id);
-
         return {
           price_data: {
             currency: "usd",
@@ -48,14 +46,13 @@ module.exports = createCoreController("api::order.order", ({ strapi }) => ({
 
       await strapi.service("api::order.order").create({
         data: {
-          cart,
+          products: cart,
           stripeID: session.id,
         },
       });
       return { stripeSession: session };
     } catch (err) {
       ctx.response.status = 500;
-      console.log(err);
     }
   },
 }));
