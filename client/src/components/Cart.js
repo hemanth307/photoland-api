@@ -13,7 +13,7 @@ const Cart = () => {
   const { cart, setIsOpen, clearCart, total } = useContext(CartContext);
   console.log(cart);
   const stripePromise = loadStripe(
-    'pk_test_51Mje2CJQ1uw4BGvjYmakso13e7UJKZSlDYJ3S6qeJu1bSgzhkQ7SnYFWfH2RKkpv749OdRHV3tzMVHv6N8LpbXs000GqpPi453'
+    'pk_test_51NP1EJSDwqjWS9yEljqH3hajp2NmJBKjBJxD3wMUSNRy7AOfHd5FOofGhCySqLFUwJBTjKHGg5Vb2vUi8wyFYV9300rN3iChFc'
   );
 
   const handlePayment = async () => {
@@ -52,11 +52,11 @@ const Cart = () => {
         <div className='px-6 py-10 flex flex-col'>
           <div className='flex justify-between text-lg'>
             <div>Subtotal</div>
-            <div className='text-white'>$ {parseFloat(total)}</div>
+            <div className='text-white'>₹ {parseFloat(total)}</div>
           </div>
           <div className='flex justify-between text-2xl'>
             <div>Total</div>
-            <div className='text-white'>$ {total}</div>
+            <div className='text-white'>₹ {total}</div>
           </div>
         </div>
       )}

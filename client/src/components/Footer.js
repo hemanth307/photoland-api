@@ -1,5 +1,6 @@
 import React from 'react';
-import { FaYoutube, FaInstagram, FaTwitter, FaFacebook } from 'react-icons/fa';
+import { AiFillLinkedin, AiFillInstagram, AiFillGithub } from 'react-icons/ai';
+import { BsBrowserChrome } from 'react-icons/bs';
 
 const Footer = () => {
   return (
@@ -7,7 +8,7 @@ const Footer = () => {
       <div className='container mx-auto'>
         <div className='text-center'>
           <h2 className='h2 uppercase mb-6 font-semibold'>
-            Subscribe to our newsletter
+            Subscribe to our PHOTOLAND
           </h2>
           <p className='text-white/70'>
             Be the first to get the latest news about trends, promotions, and
@@ -36,17 +37,17 @@ const Footer = () => {
         </div>
         {/* socials */}
         <div className='flex gap-x-6 max-w-max mx-auto text-lg mb-16'>
-          <a href='#' className='hover:text-accent transition-all'>
-            <FaYoutube />
+          <a href='https://www.linkedin.com/in/hemanth-akula-902216221/' className='hover:text-accent transition-all' target="_blank">
+            <AiFillLinkedin />
           </a>
-          <a href='#' className='hover:text-accent transition-all'>
-            <FaInstagram />
+          <a href='https://github.com/hemanth307' className='hover:text-accent transition-all' target="_blank">
+            <AiFillGithub />
           </a>
-          <a href='#' className='hover:text-accent transition-all'>
-            <FaTwitter />
+          <a href='https://www.instagram.com/hem_307/' className='hover:text-accent transition-all' target="_blank">
+            <AiFillInstagram />
           </a>
-          <a href='#' className='hover:text-accent transition-all'>
-            <FaFacebook />
+          <a href='https://portfolio-pi-murex-92.vercel.app/' className='hover:text-accent transition-all' target="_blank">
+            <BsBrowserChrome />
           </a>
         </div>
       </div>

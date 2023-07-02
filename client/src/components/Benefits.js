@@ -18,7 +18,7 @@ const Benefits = () => {
                 Fast and Free Delivery
               </div>
               <div className='text-sm font-light text-white/80'>
-                Free delivery for all orders over $140
+                Free delivery for all orders
               </div>
             </div>
           </div>

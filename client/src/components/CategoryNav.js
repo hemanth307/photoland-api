@@ -16,7 +16,7 @@ const CategoryNav = () => {
             return (
               <Link
                 to={`/products/${category.id}`}
-                className='cursor-pointer uppercase'
+                className='cursor-pointer uppercase hover:text-accent'
                 key={category.id}
               >
                 {category.attributes.title}

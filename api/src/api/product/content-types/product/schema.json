@@ -26,6 +26,9 @@
     "title": {
       "type": "string"
     },
+    "description": {
+      "type": "text"
+    },
     "price": {
       "type": "decimal"
     },
@@ -38,9 +41,6 @@
       "relation": "manyToMany",
       "target": "api::category.category",
       "inversedBy": "products"
-    },
-    "description": {
-      "type": "text"
     }
   }
 }

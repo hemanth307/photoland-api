@@ -12,7 +12,7 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "stripeID": {
+    "stripeId": {
       "type": "text"
     },
     "products": {

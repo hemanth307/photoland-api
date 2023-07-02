@@ -34,12 +34,12 @@ const CartItem = ({ item }) => {
             <Qty item={item} />
           </div>
           <div className='text-accent text-xl'>
-            $ {item.attributes.price * item.amount}
+          ₹ {item.attributes.price * item.amount}
           </div>
         </div>
         {/* prices */}
         <div>
-          <span className='text-accent'>$ {item.attributes.price}</span> per
+          <span className='text-accent'>₹ {item.attributes.price}</span> per
           piece
         </div>
       </div>

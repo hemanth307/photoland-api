@@ -4,6 +4,7 @@ import Logo from '../img/logo.png';
 // icons
 import { SlBag } from 'react-icons/sl';
 import { FiMenu } from 'react-icons/fi';
+import { BiPhoneCall } from 'react-icons/bi';
 // link
 import { Link } from 'react-router-dom';
 // components
@@ -45,8 +46,8 @@ const Header = () => {
           </div>
           {/* phone & cart */}
           <div className='flex items-center gap-x-[10px]'>
-            <div className='hidden xl:flex uppercase'>
-              Need help? 123 456 789
+            <div className='hidden xl:flex uppercase mx-2'>
+              Need help <BiPhoneCall className='ml-2' size={24} /> 9100876163
             </div>
             <div
               onClick={() => setIsOpen(!isOpen)}

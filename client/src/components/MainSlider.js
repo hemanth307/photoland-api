@@ -1,6 +1,7 @@
 import React from 'react';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { Link } from 'react-router-dom';
 
 // Import Swiper styles
 import 'swiper/css';
@@ -67,8 +68,13 @@ const MainSlider = () => {
                     {slide.titlePart2} <br />
                     {slide.titlePart3}
                   </div>
-                  <button className='btn btn-accent mx-auto lg:mx-0'>
-                    Shop now
+                  <button className='btn btn-accent w-fit h-auto'>
+                      <Link
+                        to={`/product/22`}
+                        className='cursor-pointer uppercase text-black'
+                        >
+                        Shop NOW
+                      </Link>
                   </button>
                 </div>
                 {/* image */}
